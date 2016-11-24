@@ -39,7 +39,7 @@ void msort (int left, int right) {
         return;
     }
     int len = right - left;
-    int mid = ( len / 2 ) + left;//右移运算 len >> 1 等价于 len / 2
+    int mid = ( len >> 1 ) + left;//右移运算 len >> 1 等价于 len / 2
     int start1 = left, end1 = mid;
     int start2 = mid + 1, end2 = right;
     msort(start1, end1);//分治法
