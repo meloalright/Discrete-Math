@@ -34,7 +34,7 @@ template<typename T> */
 int a[8] = {1, 9, 7, 2, 5, 6, 3, 0};
 int reg[8];//中转数组
 
-void msort (int left, int right) {
+void msort (int * a, int left, int right) {
     if(left >= right) {
         return;
     }
@@ -42,8 +42,8 @@ void msort (int left, int right) {
     int mid = ( len >> 1 ) + left;//右移运算 len >> 1 等价于 len / 2
     int start1 = left, end1 = mid;
     int start2 = mid + 1, end2 = right;
-    msort(start1, end1);//分治法
-    msort(start2, end2);//分治法
+    msort(a, start1, end1);//分治法
+    msort(a, start2, end2);//分治法
     int k = left;
     //按顺序
     //分别从两数组收集
@@ -70,7 +70,7 @@ int main(){
     cout<< endl <<  "==merge sort==" <<endl;
     
     //msort
-    msort(0,7);
+    msort(a,0,7);
 
     return 0;
 }

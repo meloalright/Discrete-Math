@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 int a[101],n;
-void qsort(int left,int right){
+void qsort(int * a, int left, int right){
 	int i,j,t,temp;
 	if(left>right)
 		return;
@@ -28,8 +28,8 @@ void qsort(int left,int right){
 	a[i] = temp;//原a[i]得到基准数
 
 	//递归
-	qsort(left,i-1);//处理左边
-	qsort(i+1,right);//处理右边
+	qsort(a, left,i-1);//处理左边
+	qsort(a, i+1,right);//处理右边
 }
 int main(){
 	n=9;
@@ -38,7 +38,7 @@ int main(){
 		cout << "a[" << i << "]=";
 		cin >> a[i];
 	}
-	qsort(0,9);
+	qsort(a,0,9);
 	for(int j;j<10;j++){
 		cout<< a[j] << " ";
 	}

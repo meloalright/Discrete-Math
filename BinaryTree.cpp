@@ -55,10 +55,10 @@ void printBTreeNode(BTreeNode *nd, int depth) {
 	if (depth > 0)
 		printf("--");
 	if (!nd) {
-		printf("*/n");
+		printf("*\n");
 		return;
 	}
-	printf("%c/n", nd->e);
+	printf("%c\n", nd->e);
 	printBTreeNode(nd->left, depth + 1);
 	printBTreeNode(nd->right, depth + 1);
 }
@@ -74,16 +74,16 @@ int main() {
 	char pre[] = "ABDGCEFH";
 	char in[] = "DGBAECHF";
 	BTree t = createBTree(pre, in);
-	printf("Preorder: %s/n", pre);
-	printf("Inorder: %s/n", in);
+	printf("Preorder: %s\n", pre);
+	printf("Inorder: %s\n", in);
 	if (countBTree(t) != strlen(pre)) {
-		printf("No such a binary tree!/n");
+		printf("No such a binary tree!\n");
 		return 0;
 	}
 	printf("Postorder: ");
 	printPostOrder(t);
-	printf("/n");
-	printf("The BTree is (* means no such node):/n");
+	printf("\n");
+	printf("The BTree is (* means no such node):\n");
 	printBTree(t);
 	return 0;
 }
